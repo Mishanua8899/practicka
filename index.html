@@ -15,37 +15,54 @@
         <div class="form-block">
             <form action="#" class="form-block__form">
                 <div class="form-block__user-info">
-                    <label for="name" class="label">Имя</label>
-                    <input type="text" id="name" placeholder="Введите имя" class="input">
-                    <img src="" alt="" id="img-name" class="img">
-                    <p id="caption-name" class="caption"></p>
-                    <label for="surname" class="label">Фамилия</label>
-                    <input type="text" id="surname" placeholder="Введите фамилию" class="input">
-                    <img src="" alt="" id="img-surname" class="img">
-                    <p id="caption-surname" class="caption"></p>
-                    <label for="city" class="label">Город</label>
-                    <input type="text" id="city" placeholder="Введите город" class="input">
-                    <img src="" alt="" id="img-city" class="img">
-                    <p id="caption-city" class="caption"></p>
+                    <div class="form-block__row">
+                        <label for="name" class="label">Имя</label>
+                        <input type="text" id="name" placeholder="Введите имя" class="input">
+                        <img src="" alt="" id="img-name" class="img">
+                        <p id="caption-name" class="caption"></p>
+                    </div>
+                    <div class="form-block__row">
+                        <label for="surname" class="label">Фамилия</label>
+                        <input type="text" id="surname" placeholder="Введите фамилию" class="input">
+                        <img src="" alt="" id="img-surname" class="img">
+                        <p id="caption-surname" class="caption"></p>
+                    </div>
+                    <div class="form-block__row">
+                        <label for="city" class="label">Город</label>
+                        <input type="text" id="city" placeholder="Введите город" class="input">
+                        <img src="" alt="" id="img-city" class="img">
+                        <p id="caption-city" class="caption"></p>
+                    </div>
                 </div>
                 <div class="form-block__privacy">
-                    <label for="email" class="label">Эл. почта</label>
-                    <input type="text" id="email" placeholder="Введите эл. почту" class="input">
-                    <img src="" alt="" id="img-email" class="img">
-                    <p id="caption-email" class="caption"></p>
-                    <label for="password" class="label">Пароль</label>
-                    <input type="password" id="password" placeholder="Введите пароль" class="input">
-                    <img src="" alt="">
-                    <p id="caption-password"></p>
-                    <label for="password-again" class="label">Повторите</label>
-                    <input type="password" id="password-again" placeholder="Повторите пароль" class="input">
-                    <img src="" alt="">
-                    <p id="caption-password_again"></p>
+                    <div class="form-block__row">
+                        <label for="email" class="label">Эл. почта</label>
+                        <input type="text" id="email" placeholder="Введите эл. почту" class="input">
+                        <img src="" alt="" id="img-email" class="img">
+                        <p id="caption-email" class="caption"></p>
+                    </div>
+                    <div class="form-block__row">
+                        <label for="password" class="label">Пароль</label>
+                        <input type="password" id="password" placeholder="Введите пароль" class="input">
+                        <img src="" alt="">
+                        <p id="caption-password" class="caption"></p>
+                    </div>
+                    <div class="form-block__row">
+                        <label for="password-again" class="label">Повторите</label>
+                        <input type="password" id="password-again" placeholder="Повторите пароль" class="input">
+                        <img src="" alt="" id="img-passwod_again" class="img">
+                        <p id="caption-password_again" class="caption"></p>
+                    </div>
                 </div>
-                <label for="verificate" class="label verificate">Введите число с картинки</label>
+                <label for="capcha" class="verificate">Введите число с картинки</label>
                 <div class="form-block__verification">
-                    <img src="" alt="numbers">
-                    <input type="text" id="verificate" placeholder="Введите число">
+                    <div class="form-block__capcha-block">
+                        <img src="144-Photoroom.png" alt="numbers" class="capcha">
+                    </div>
+
+                    <input type="text" id="capcha" placeholder="Введите число" class="input">
+                    <img src="" alt="" id="img-capcha" class="img">
+                    <p id="caption-capcha" class="caption"></p>
                 </div>
             </form>
             <div class="form-block__registration">

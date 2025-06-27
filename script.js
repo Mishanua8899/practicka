@@ -15,40 +15,84 @@ let captionEmail = document.getElementById('caption-email')
 let imageEmail = document.getElementById('img-email')
 
 let inputPassword = document.getElementById('password')
-let captionPassword = document.getElementById('caption-password') 
+let captionPassword = document.getElementById('caption-password')
 
 let inputPasswordAgain = document.getElementById('password-again')
 let captionPasswordAgain = document.getElementById('caption-password_again')
+let imagePassword = document.getElementById('img-passwod_again')
 
+let inputCapcha = document.getElementById('capcha')
+let captionCapcha = document.getElementById('caption-capcha')
+let imageCapcha = document.getElementById('img-capcha')
 
-function checkInput(input, image, caption, messaage) {
-    if(!input.target.value.trim()) {
-        caption.textContent = messaage
-        image.src = 'reject.png'
-        input.target.classList.remove('accept')
-        input.target.classList.add('deny')
+function denied(input, image, caption, message) {
+    caption.textContent = message
+    image.src = 'reject.png'
+    input.classList.remove('accept')
+    input.classList.add('deny')
+}
+
+function accepted(input, image, caption) {
+    caption.textContent = ''
+    image.src = 'shield.png'
+    input.classList.remove('deny')
+    input.classList.add('accept')
+}
+
+function checkInput(input, image, caption, message) {
+    if (!input.value.trim()) {
+        denied(input, image, caption, message)
     } else {
-        caption.textContent = ''
-        image.src = 'shield.png'
-        input.target.classList.remove('deny')
-        input.target.classList.add('accept')
-
+        accepted(input, image, caption)
     }
 }
 
-inputName.addEventListener('change', function(e) {
-    checkInput(e, imageName, captionName, 'Введите имя')
+function checkCapcha(input, image, caption, message) {
+    if (input.value.trim() === '8064801') {
+        accepted(input, image, caption)
+    } else {
+        denied(input, image, caption, message)
+    }
+}
+
+function checkPassword(password, secondPassword, image, caption, message) {
+    if (password.value !== secondPassword.value) {
+        denied(secondPassword, image, caption, message) 
+    } else {
+        accepted(secondPassword, image, caption)
+    }
+}
+
+
+inputName.addEventListener('change', function (e) {
+    checkInput(e.target, imageName, captionName, 'Введите имя')
 })
 
-inputSurname.addEventListener('change', function(e) {
-    checkInput(e, imageSurname, captionSurname, 'Введите фамилию')
+inputSurname.addEventListener('change', function (e) {
+    checkInput(e.target, imageSurname, captionSurname, 'Введите фамилию')
 })
 
-inputCity.addEventListener('change', function(e) {
-    checkInput(e, imageCity, captionCity, 'Введите город')
+inputCity.addEventListener('change', function (e) {
+    checkInput(e.target, imageCity, captionCity, 'Введите город')
 })
 
-inputEmail.addEventListener('change', function(e) {
-    checkInput(e, imageEmail, captionEmail, 'Введите эл. почту')
+inputEmail.addEventListener('change', function (e) {
+    checkInput(e.target, imageEmail, captionEmail, 'Введите эл. почту')
 })
+
+inputCapcha.addEventListener('change', function (e) {
+    checkCapcha(e.target, imageCapcha, captionCapcha, 'Неправильное число')
+})
+
+inputPasswordAgain.addEventListener('change', function(e) {
+    checkPassword(inputPassword, e.target, imagePassword, captionPasswordAgain, 'Неправильный пароль')
+})
+
+
+
+
+
+
+
+
 
