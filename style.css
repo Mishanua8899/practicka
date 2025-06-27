@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Consolas";
+    src: url("consola.ttf");
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Consolas';
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-block__registration {
+    margin-top: 5px;
+    padding: 10px 5px;
+    background-color: #d3d3d3;
+    border-radius: 3px;
+}
+
+.form-block__registration .registration {
+    margin-left: calc(12vw + 20px);
+    padding: 2px 15px;
+    border: none;
+    border-radius: 10em;
+    color: white;
+    cursor: pointer;
+    background: #2A7B9B;
+    background: linear-gradient(180deg, rgba(42, 123, 155, 1) 0%, rgba(29, 179, 86, 1) 0%, rgba(134, 255, 54, 1) 100%);
+}
+
+.form-block__form {
+    font-family: "Consolas";
+    font-size: 12px;
+    width: 48vw;
+    border: 1px solid #d3d3d3;
+    border-radius: 2px;
+    padding: 20px 15px;
+}
+
+.form-block__user-info,
+.form-block__privacy,
+.form-block__verification {
+    width: 48vw;
+    display: grid;
+    grid-template-columns: 12vw 1fr 4vw 10vw;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-block__user-info {
+    margin-bottom: 2vh;
+}
+
+.verificate {
+    display: block;
+    margin-top: 2vw;
+}
+
+.img {
+    width: 20px;
+}
+
+.caption {
+    height: 1em;
+    width: fit-content;
+}
+
+.input {
+    font-family: "Consolas";
+}
+
+
+@media screen and (max-width: 940px) {
+    .form-block__form {
+        width: 75vw;
+    }
+
+    .form-block__user-info,
+    .form-block__privacy,
+    .form-block__verification {
+        width: 75vw;
+        grid-template-columns: 15vw 1fr 4vw 20vw;
+    }
+}
+
+.accept {
+    background-color: rgba(134, 255, 54, 0.775);
+
+}
+
+.deny {
+    background-color: rgba(255, 53, 53, 0.545);
+}
